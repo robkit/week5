@@ -3,7 +3,8 @@ MoviesApp::Application.routes.draw do
   # Routes for the Theater resource:
   # CREATE
   get '/theaters/new', controller: 'theaters', action: 'new'
-
+  post "/theaters", controller: 'theaters', action: 'create'
+  
   # READ
   get '/theaters', controller: 'theaters', action: 'index'
   get '/theaters/:id', controller: 'theaters', action: 'show'
@@ -18,6 +19,7 @@ MoviesApp::Application.routes.draw do
 
 # Routes for the Movie resource:
 
+ root :to => "movies#index"
  get '/movies/new', controller: 'movies', action: 'new'
  post "/movies", controller: 'movies', action: 'create'
  get "/movies", controller: 'movies', action: 'index'
